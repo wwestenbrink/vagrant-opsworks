@@ -1,0 +1,6 @@
+packer_cache
+output-*
+.vagrant
+
+.DS_Store
+.idea
