@@ -1,10 +1,14 @@
+task 'virtualbox-build' => 'clean' do
+    system 'packer build -only=virtualbox ubuntu12.04-opsworks.json'
+end
+
 task 'virtualbox-install' do
     system 'vagrant box remove ubuntu1204-opsworks virtualbox'
     system 'vagrant box add ubuntu1204-opsworks virtualbox/ubuntu1204-opsworks.box'
 end
 
-task 'virtualbox-build' do
-    system 'packer build -only=virtualbox ubuntu12.04-opsworks.json'
+task 'vmware-build' => 'clean' do
+    system 'packer build -only=vmware ubuntu12.04-opsworks.json'
 end
 
 task 'vmware-install' do
@@ -12,6 +16,6 @@ task 'vmware-install' do
     system 'vagrant box add ubuntu1204-opsworks vmware/ubuntu1204-opsworks.box'
 end
 
-task 'vmware-build' do
-    system 'packer build -only=vmware ubuntu12.04-opsworks.json'
+task 'clean' do
+    system 'rm -f virtualbox/ubuntu1204-opsworks.box vmware/ubuntu1204-opsworks.box'
 end
