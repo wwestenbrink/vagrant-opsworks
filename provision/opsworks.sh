@@ -3,7 +3,7 @@ apt-get install -y ruby ruby-dev rubygems libicu-dev libssl-dev libopenssl-ruby 
 
 # download & extract opswork-agent-installer
 cd /usr/local
-wget -O opsworks-agent.tgz https://opsworks-instance-agent.s3.amazonaws.com:443/211/opsworks-agent-installer.tgz
+wget -O opsworks-agent.tgz https://opsworks-instance-agent.s3.amazonaws.com:443/214/opsworks-agent-installer.tgz
 tar -xvzpof opsworks-agent.tgz
 
 # build & install custom chef gem
