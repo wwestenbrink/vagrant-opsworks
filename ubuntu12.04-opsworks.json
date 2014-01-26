@@ -2,7 +2,7 @@
     "builders": [
         {
             "vm_name": "ubuntu1204-opsworks",
-            "type": "virtualbox",
+            "type": "virtualbox-iso",
             "guest_os_type": "Ubuntu_64",
             "http_directory": "preseed",
             "iso_url": "http://releases.ubuntu.com/12.04/ubuntu-12.04.3-server-amd64.iso",

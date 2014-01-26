@@ -1,5 +1,5 @@
 task 'virtualbox-build' => 'clean' do
-    system 'packer build -only=virtualbox ubuntu12.04-opsworks.json'
+    system 'packer build -only=virtualbox-iso ubuntu12.04-opsworks.json'
 end
 
 task 'virtualbox-install' do
