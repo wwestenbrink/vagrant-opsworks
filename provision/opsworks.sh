@@ -8,6 +8,6 @@ tar -xvzpof opsworks-agent.tgz
 
 # build & install custom chef gem
 cd opsworks-agent-installer/opsworks-agent/
-gem install bundler --no-ri --no-rdoc
+gem install bundler --version 1.3.5 --no-ri --no-rdoc
 bundle install --binstubs --system
 ln -s /usr/local/opsworks-agent-installer/opsworks-agent/bin/chef-solo /usr/local/bin/chef-solo
