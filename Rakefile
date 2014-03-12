@@ -8,7 +8,7 @@ task 'virtualbox-install' do
 end
 
 task 'vmware-build' => 'clean' do
-    system 'packer build -only=vmware ubuntu12.04-opsworks.json'
+    system 'packer build -only=vmware-iso ubuntu12.04-opsworks.json'
 end
 
 task 'vmware-install' do

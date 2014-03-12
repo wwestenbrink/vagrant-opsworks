@@ -31,7 +31,7 @@
         },
         {
             "vm_name": "ubuntu1204-opsworks",
-            "type": "vmware",
+            "type": "vmware-iso",
             "boot_command": [
                 "<esc><wait>",
                 "<esc><wait>",
