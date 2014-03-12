@@ -34,7 +34,7 @@ Use this project to build a Ubuntu 12.04 vagrant box provisioned with the ruby s
     rake clean
 # Notes
 
-* Uses the latest release of ubuntu 12.04 LTS from http://releases.ubuntu.com/12.04/ubuntu-12.04.3-server-amd64.iso
+* Uses the latest release of ubuntu 12.04 LTS from http://releases.ubuntu.com/12.04/ubuntu-12.04.4-server-amd64.iso
 * Ubuntu 12.04 ships with ruby 1.8.7 by default, install something like rbenv to provide ruby1.9 to your vagrant user if needed
 
 # References
