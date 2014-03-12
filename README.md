@@ -4,7 +4,7 @@ The main goal of this project is building vagrant boxes for developing & testing
 
 At the moment the Opsworks agent will always provision your instances with a ruby 1.8.7 stack including a custom version of chef 11.4.4.
 
-Use this project to build a Ubuntu 12.04 vagrant box provisioned with the ruby stack from opsworks agent release 214.
+Use this project to build a Ubuntu 12.04 vagrant box provisioned with the ruby stack from opsworks agent release 221.
 
 # Dependencies
 
