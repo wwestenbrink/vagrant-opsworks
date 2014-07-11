@@ -1,0 +1,61 @@
+# opsworks-agent pre-config file
+# /var/lib/aws/opsworks/pre_config.yml
+---
+
+:hostname: opsworks-vagrant
+:identity: ffffffff-ffff-ffff-ffff-ffffffffffff
+:agent_installer_base_url: opsworks-instance-agent.s3.amazonaws.com
+:agent_installer_tgz: opsworks-agent-installer.tgz
+:verbose: false
+:instance_service_region: us-east-1
+:instance_service_endpoint: localhost
+:instance_service_port: '65535'
+:instance_public_key: |
+  -----BEGIN PUBLIC KEY-----
+  MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA30W1qY/kuT3H0QJAWaOs
+  0tLI8E64OKKCsK6908NL8ReroxsYHZHjzl5+ZNw7YE4QENBZ4eWR4gbC2z/YT/5b
+  U6LrZZUCuIdSL+9cMyBUUOTEV1W1Z5EtZkB8PgoDm2+SSDnL9F6Tww+oiD27kA4n
+  xa68i6Y0+tGARAkC11tX7z7Yg0cfkLYXcY3weueXagbIdF+esxuVFXj+Jz/oyBwP
+  qU1lVWQ1b3ZYv2XPnmMuJPfdENI/0YHkXm1JMhdseEUPS3TuZalqpDIbG/9m1ZMB
+  GiH5UUshMm2GldDjjEnVV024K+WFi7ww76+pJcdZ8NcyLXVzLEH/CiwhnQigFzw3
+  xQIDAQAB
+  -----END PUBLIC KEY-----
+:instance_private_key: |
+  -----BEGIN RSA PRIVATE KEY-----
+  MIIEpAIBAAKCAQEA30W1qY/kuT3H0QJAWaOs0tLI8E64OKKCsK6908NL8ReroxsY
+  HZHjzl5+ZNw7YE4QENBZ4eWR4gbC2z/YT/5bU6LrZZUCuIdSL+9cMyBUUOTEV1W1
+  Z5EtZkB8PgoDm2+SSDnL9F6Tww+oiD27kA4nxa68i6Y0+tGARAkC11tX7z7Yg0cf
+  kLYXcY3weueXagbIdF+esxuVFXj+Jz/oyBwPqU1lVWQ1b3ZYv2XPnmMuJPfdENI/
+  0YHkXm1JMhdseEUPS3TuZalqpDIbG/9m1ZMBGiH5UUshMm2GldDjjEnVV024K+WF
+  i7ww76+pJcdZ8NcyLXVzLEH/CiwhnQigFzw3xQIDAQABAoIBAQDF6Ji6kJ4BxU2V
+  axV3X6oVxlnvCRgqu4J08q+5QefS8VRm4+FgdK0lhIUtCjpnh0qeXNEPd9r0K2IV
+  zmYDokd5v3RBOvCKeQjVDKsBdqrGecHAWGzQPNOtS4PVyjKgWSmlc/XhyuPXh82v
+  1minrKR8igL/Fnjny0STChnGo2Uy3y3X089VIWlkKskSTLe73jTN7EeI47+LHJul
+  ULiV8Oh7YbEHf4w6Fz+1LNxcCJg8rNYeJKrGbCBq/ImygiJp14+oTU2nCDQSBJqF
+  bdUPhtpQDlDsAsfgBavYb3fHc0ZBVbCwM84VSdktKz9QbINI2Ugh+lI201woORlZ
+  MCqClgwRAoGBAPs1vapbsNbb+zRIxKRKfOLcay3O9efPyUqOPIMmn3pbpxk0GEBg
+  KQXO5PZmDP25oLA3bLvowVMMgShY1WRAr7ReloIRHaARVo+If8c7G83nePycYZ3f
+  C/ztfzsKpBO2SVzUkQIzh6rogK/rKUa/FCwZ/Gnf93v/j5RyUmLWXoZrAoGBAOOH
+  l/yCaxdY5khc1uEbCQDzT9lqWKcgFjoVuWO7o4vallNIDnCDd7olGbR2oIWbJAtB
+  mKpXLIWVjcRPXGp9Kr07mvkL+/mO2m6tG/vFJDh5Jge/qoOK4d1KEb2y+PwK+XRK
+  /SkAEcT6qpLMdz5W/Oy/wBc8b/BeBJkSoF1/weaPAoGAZ3eGDBHB720htTI3k/d+
+  Iq5okrCIhhcGMGgPMnGJBAuV8oKLbpBstRC3K2ly9lorfgkGBwth/QPMesLD+YvP
+  ErpWwXGtQw2BGpM9FeEZnaA2K815Q13oASAM5FOIqvnMk6iVpVN2EIW84zg3gwUW
+  mOeHGFCADZmAGMNRfZYPzssCgYAnCWB+JjIRc2MvDx6eyHCnBReyCZjkM5EcrhV8
+  kvjgScR4zWgMzcGA4lSiraekxJVOiRaUQxiUYrBL+gG1E3x9svhHulKk4ml/i5u9
+  enlYZxCrS6sJno5Z1RduIIKvW4Ko/SSqICTsUsVpIkNjIrGKPOvMEMZzyu2nBZcV
+  85Fk6QKBgQDLfvbS010HhYuEoW9NtSgeSxaJaCTU82EURBoL3F1umPcc1+EmtvnE
+  WbjdSwiVT7tb8F/yM6wIGjHEaNdIPdIakHEPU4MfJFDe/+aPwk2M1MCCpbERgyJR
+  m4SlK1pWQsPZ6Em0C+bw+dnkThEXXb3kfWSxnuh0d7JjfX+Fd/8F6Q==
+  -----END RSA PRIVATE KEY-----
+:charlie_public_key: |
+  -----BEGIN PUBLIC KEY-----
+  MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAni7eKdm34oaCvGiw96Fk
+  lyLX+aPfInYzilkk+AY3pXF6nijpQ2cm3ZeM2EoqZFTv3a/meosNBAs3Q3Sy1e4G
+  7Ibn/xwMof+iSBvimx3PGKFzNP0BhY9yS6AMEMxtmqksHb0glwmFeJcomdhxZV1F
+  ziWTtL6ZEyvCg0I7rxGm1ceQmD25eK90VcZVh4LJtNfnwcZRM4eC+KK9Qllxw5hW
+  vB4Z52JMMZbEG9MYCLydWSY9rnVkAyQ0ngJUaJ3q7JsbkBV/J5BcrGgcbioR1k+h
+  INRoHwBQU9WnT/x8W+N6vwJb4o6v2hBR1H2GSDLwyZ7wC8EVH+XafWYpU1g/nSEe
+  aQIDAQAB
+  -----END PUBLIC KEY-----
+:wait_between_runs: '60'

@@ -1,18 +1,19 @@
 # install dependencies
-apt-get install -y libxml2-dev libxslt-dev libyaml-dev
+apt-get install -y curl libxml2-dev libxslt-dev libyaml-dev
 
-# install opsworks ruby 2.0.0-p451
-wget -O /tmp/ruby.deb https://opsworks-instance-assets.s3.amazonaws.com/packages/ubuntu/12.04/opsworks-ruby2.0_2.0.0-p451.1_amd64.deb
-dpkg -i /tmp/ruby.deb
+# create opsworks directories and seed them with expected config files
+mkdir -p /etc/aws/opsworks/ /opt/aws/opsworks/ /var/log/aws/opsworks/ /var/lib/aws/opsworks/ /var/lib/cloud/
+cp opsworks/* /var/lib/aws/opsworks/
 
-# download & extract opswork-agent-installer
-cd /usr/local
-wget -O opsworks-agent.tgz https://opsworks-instance-agent.s3.amazonaws.com:443/306/opsworks-agent-installer.tgz
+# download and install opsworks-agent and all support files
+cd $(mktemp -d)
+wget -O opsworks-agent.tgz https://opsworks-instance-agent.s3.amazonaws.com:443/316/opsworks-agent-installer.tgz
 tar -xvzpof opsworks-agent.tgz
+cd opsworks-agent-installer/opsworks-agent/bin/
+./installer_wrapper.sh
 
-# build & install custom chef gem
-cd opsworks-agent-installer/opsworks-agent/
-gem install bundler --version 1.5.3 --no-ri --no-rdoc
-bundle install --binstubs --system
-mv /usr/local/bin/chef-solo /usr/local/bin/chef-solo.original
-ln -s /usr/local/opsworks-agent-installer/opsworks-agent/bin/chef-solo /usr/local/bin/chef-solo
+# ensure we can access the opsworks chef gem
+echo "export PATH=\$PATH:/opt/aws/opsworks/current/bin" > /etc/profile.d/opsworks_path.sh
+
+# don't automatically run opsworks-agent
+rm -f /etc/monit.d/opsworks-agent.monitrc /etc/monit/conf.d/opsworks-agent.monitrc
