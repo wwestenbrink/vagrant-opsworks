@@ -3,7 +3,7 @@ task 'virtualbox-build' => 'clean' do
 end
 
 task 'virtualbox-install' do
-    system 'vagrant box remove ubuntu1204-opsworks virtualbox'
+    system 'vagrant box remove ubuntu1204-opsworks --provider virtualbox'
     system 'vagrant box add ubuntu1204-opsworks virtualbox/ubuntu1204-opsworks.box'
 end
 
@@ -12,7 +12,7 @@ task 'vmware-build' => 'clean' do
 end
 
 task 'vmware-install' do
-    system 'vagrant box remove ubuntu1204-opsworks vmware_desktop'
+    system 'vagrant box remove ubuntu1204-opsworks --provider vmware_desktop'
     system 'vagrant box add ubuntu1204-opsworks vmware/ubuntu1204-opsworks.box'
 end
 
