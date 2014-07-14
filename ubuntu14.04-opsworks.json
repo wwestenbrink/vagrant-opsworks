@@ -1,0 +1,104 @@
+{
+    "builders": [
+        {
+            "vm_name": "ubuntu1404-opsworks",
+            "type": "virtualbox-iso",
+            "guest_os_type": "Ubuntu_64",
+            "http_directory": "preseed",
+			"iso_urls": [
+				"http://releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso",
+				"http://nl.releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso"
+			],
+			"iso_checksum": "01545fa976c8367b4f0d59169ac4866c",
+			"iso_checksum_type": "md5",
+            "ssh_username": "vagrant",
+            "ssh_password": "vagrant",
+            "ssh_wait_timeout": "10000s",
+			"boot_wait": "5s",
+            "boot_command": [
+                "<esc><esc><enter><wait>",
+                "/install/vmlinuz noapic ",
+                "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+                "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+                "hostname={{ .Name }} ",
+                "fb=false debconf/frontend=noninteractive ",
+                "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+                "keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+                "initrd=/install/initrd.gz -- <enter>"
+            ],
+            "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
+			"hard_drive_interface": "sata",
+            "disk_size": 10140,
+            "vboxmanage": [
+                ["modifyvm", "{{.Name}}", "--memory", "512"],
+                ["modifyvm", "{{.Name}}", "--cpus", "1"]
+            ]
+        },
+        {
+            "vm_name": "ubuntu1404-opsworks",
+            "type": "vmware-iso",
+            "guest_os_type": "ubuntu-64",
+            "boot_wait": "10s",
+			"boot_command": [
+				"<esc><esc><enter><wait>",
+				"/install/vmlinuz ",
+				"preseed/url=http://{{.HTTPIP}}:{{.HTTPPort}}/preseed.cfg ",
+				"debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+				"hostname={{.Name}} ",
+				"fb=false debconf/frontend=noninteractive ",
+				"keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+				"keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+				"initrd=/install/initrd.gz -- <enter>"
+			],
+            "disk_size": 10140,
+            "http_directory": "preseed",
+			"iso_urls": [
+				"http://releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso",
+				"http://nl.releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso"
+			],
+			"iso_checksum": "01545fa976c8367b4f0d59169ac4866c",
+			"iso_checksum_type": "md5",
+            "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
+            "ssh_password": "vagrant",
+            "ssh_port": 22,
+            "ssh_username": "vagrant",
+            "ssh_wait_timeout": "10000s",
+            "tools_upload_flavor": "linux",
+            "tools_upload_path": "/home/vagrant/vmware_tools.iso",
+            "vmx_data": {
+                "cpuid.coresPerSocket": "1",
+                "memsize": "512",
+                "numvcpus": "1"
+            }
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "file",
+            "source": "provision",
+            "destination": "/tmp"
+        },
+        {
+            "type": "shell",
+            "inline": [
+                "cd /tmp && chmod -R +x provision/"
+            ]
+        },
+        {
+            "type": "shell",
+            "inline": [
+                "cd /tmp/provision",
+                "./base.sh",
+                "./opsworks.sh",
+                "./vmtools.sh",
+                "./vagrant.sh",
+                "./cleanup.sh"
+            ],
+            "execute_command": "echo 'vagrant'|{{.Vars}} sudo -E -S bash '{{.Path}}'"
+        }
+    ],
+    "post-processors": [{
+        "type": "vagrant",
+        "output": "{{.Provider}}/ubuntu1404-opsworks.box"
+    }]
+}

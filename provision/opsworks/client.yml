@@ -1,0 +1,16 @@
+# opsworks chef client config file
+# /var/lib/aws/opsworks/client.yml
+---
+
+:local_mode: true
+:log_level: :info
+:ohai_plugin_path: /opt/aws/opsworks/current/plugins
+:cookbook_path: ["/opt/aws/opsworks/current/merged-cookbooks"]
+:default_cookbooks_path: /opt/aws/opsworks/current/cookbooks
+:site_cookbooks_path: /opt/aws/opsworks/current/site-cookbooks
+:merged_cookbooks_path: /opt/aws/opsworks/current/merged-cookbooks
+:berkshelf_cookbooks_path: /opt/aws/opsworks/current/berkshelf-cookbooks
+:berkshelf_cache_path: /var/lib/aws/opsworks/berkshelf_cache
+:file_cache_path: /var/lib/aws/opsworks/cache
+:search_nodes_path: /var/lib/aws/opsworks/data/nodes
+:data_bag_path: /var/lib/aws/opsworks/data/data_bags
