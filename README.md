@@ -42,7 +42,6 @@ The previous release of this project (for opsworks chef version 11.4.4) is prese
 # Notes
 
 * Uses the latest release of Ubuntu 14.04 LTS from http://releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso or Ubuntu 12.04 LTS from http://releases.ubuntu.com/12.04/ubuntu-12.04.4-server-amd64.iso
-* use Virtualbox 4.2.x for compatibility with Vagrant 1.4.x
 
 # References
 * AWS OpsWorks http://aws.amazon.com/opsworks/
