@@ -2,7 +2,7 @@
 
 The main goal of this project is building vagrant boxes for developing & testing cookbooks you plan to use in Amazon Opsworks.
 
-Use this project to build a Ubuntu 14.04 LTS (or Ubuntu 12.04.4 LTS) box provisioned with opsworks ruby2.0.0-p481 and chef 11.10.4 from agent release 328.
+Use this project to build a Ubuntu 14.04 LTS (or Ubuntu 12.04.4 LTS) box provisioned with opsworks ruby2.0.0-p481 and chef 11.10.4 from agent release 332.
 
 You may have noticed the new opsworks agent using chef-client with chef-zero now, be aware this box only provides chef-solo.
 
