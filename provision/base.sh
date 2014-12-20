@@ -26,3 +26,7 @@ apt-get update
 
 # install system updates
 apt-get upgrade -y
+
+# force ubuntu to boot without gui interation
+echo "GRUB_RECORDFAIL_TIMEOUT=10" >> /etc/default/grub
+update-grub
