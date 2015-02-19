@@ -7,7 +7,7 @@ cp opsworks/* /var/lib/aws/opsworks/
 
 # download and install opsworks-agent and all support files
 cd $(mktemp -d)
-wget -O opsworks-agent.tgz https://opsworks-instance-agent.s3.amazonaws.com/33200020141203204624/opsworks-agent-installer.tgz
+wget -O opsworks-agent.tgz https://opsworks-instance-agent.s3.amazonaws.com/33600020150210181912/opsworks-agent-installer.tgz
 tar -xvzpof opsworks-agent.tgz
 cd opsworks-agent-installer/opsworks-agent/bin/
 ./installer_wrapper.sh -R opsworks-instance-assets.s3.amazonaws.com
