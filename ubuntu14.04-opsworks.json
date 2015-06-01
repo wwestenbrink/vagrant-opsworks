@@ -32,7 +32,8 @@
             "vboxmanage": [
                 ["modifyvm", "{{.Name}}", "--memory", "512"],
                 ["modifyvm", "{{.Name}}", "--cpus", "1"]
-            ]
+            ],
+            "headless": true
         },
         {
             "vm_name": "ubuntu1404-opsworks",
@@ -69,7 +70,8 @@
                 "cpuid.coresPerSocket": "1",
                 "memsize": "512",
                 "numvcpus": "1"
-            }
+            },
+            "headless": true
         }
     ],
     "provisioners": [
