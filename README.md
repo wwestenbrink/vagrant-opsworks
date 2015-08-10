@@ -10,10 +10,10 @@ The previous release of this project (for opsworks chef version 11.4.4) is prese
 
 # Dependencies
 
-* packer http://www.packer.io/
-* virtualbox https://www.virtualbox.org/ or vmware fusion http://www.vmware.com/products/fusion/
-* vagrant http://www.vagrantup.com/
-* rake http://rake.rubyforge.org/
+* [Packer](http://www.packer.io/)
+* [VirtualBox](https://www.virtualbox.org/) or [VMware fusion](http://www.vmware.com/products/fusion/)
+* [Vagrant](http://www.vagrantup.com/)
+* [rake](http://rake.rubyforge.org/)
 
 # Usage
 
@@ -44,6 +44,6 @@ The previous release of this project (for opsworks chef version 11.4.4) is prese
 * Uses the latest release of [Ubuntu 14.04 LTS](http://releases.ubuntu.com/14.04/ubuntu-14.04.3-server-amd64.iso) or [Ubuntu 12.04 LTS](http://releases.ubuntu.com/12.04/ubuntu-12.04.5-server-amd64.iso)
 
 # References
-* AWS OpsWorks http://aws.amazon.com/opsworks/
+* [AWS OpsWorks](http://aws.amazon.com/opsworks/)
 * https://github.com/misheska/basebox-packer
 * https://github.com/opscode/bento
