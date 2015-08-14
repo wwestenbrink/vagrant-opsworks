@@ -1,10 +1,5 @@
 date > /etc/vagrant_box_build_time
 
-# Vagrant user
-/usr/sbin/groupadd vagrant
-/usr/sbin/useradd vagrant -g vagrant -G sudo -d /home/vagrant --create-home
-echo "vagrant:vagrant" | chpasswd
-
 # Set up sudo.  Be careful to set permission BEFORE copying file to sudoers.d
 ( cat <<'EOP'
 %vagrant ALL=NOPASSWD:ALL
